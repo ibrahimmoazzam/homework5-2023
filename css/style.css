@@ -1,140 +1,169 @@
+/* Define 'grow' keyframes for animation from an initial state to a final state */
 @keyframes grow {
+  /* Starting properties of the animation */
   from {
-    width: 25px;
-    opacity: 0;
+    width: 25px;     /* The element starts with a width of 25px */
+    opacity: 0;      /* The element starts fully transparent */
   }
+  /* Ending properties of the animation */
   to {
-    width: 475px;
-    opacity: 1;
+    width: 475px;    /* The element ends with a width of 475px */
+    opacity: 1;      /* The element ends fully opaque */
   }
 }
 
+/* Style for the element with id 'logo' */
 #logo {
-  animation: grow 5s;
+  animation: grow 5s;  /* Apply the 'grow' animation over 5 seconds */
 }
 
+/* Global body styles */
 body {
-  font-family: "Poppins", serif;
-  background-image: url("../images/concrete_seamless.png");
-  background-color: #f1f1f1;
+  font-family: "Poppins", serif; /* Set the default font family for the body */
+  background-image: url("../images/concrete_seamless.png"); /* Apply a background image */
+  background-color: #f1f1f1; /* Set a fallback background color */
 }
 
+/* Styles for header element */
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack flex items vertically */
+  align-items: center; /* Center-align flex items horizontally */
 }
 
+/* Styles for elements with class 'nav_links' */
 .nav_links {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack flex items vertically */
 }
 
+/* Styles for visited anchor tags */
 a:visited {
-  color: blue;
+  color: blue; /* Set the color of visited links to blue */
 }
 
+/* Styles for headers inside a class 'card' */
 .card > header {
-  background-color: #288088;
-  border: solid 2px #45adad;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  background-color: #288088; /* Set the background color */
+  border: solid 2px #45adad; /* Apply a solid border with a specified color */
+  padding-top: 20px; /* Set the top padding */
+  padding-bottom: 20px; /* Set the bottom padding */
+  border-top-left-radius: 50px; /* Round the top-left corner of the border */
+  border-top-right-radius: 50px; /* Round the top-right corner of the border */
 }
 
+/* Styles for elements with class 'card' */
 .card {
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  flex-basis: 450px;
+  border-top-left-radius: 50px; /* Round the top-left corner of the border */
+  border-top-right-radius: 50px; /* Round the top-right corner of the border */
+  flex-basis: 450px; /* Set the default size of the card in a flex container */
 }
 
+/* Styles for elements with class 'pricing' */
 .pricing {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Arrange flex items horizontally */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center-align items on the main axis */
+  align-items: center; /* Center-align items on the cross axis */
 }
 
+/* Styles for images inside a class 'gallery' */
 .gallery img {
-  border: solid 10px #50c7c7;
-  margin: 10px;
-  width: 300px;
+  border: solid 10px #50c7c7; /* Apply a solid border with a specified color */
+  margin: 10px; /* Apply margin around the images */
+  width: 300px; /* Set a fixed width for the images */
 }
 
+/* Styles for the 'gallery' container */
 .gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Arrange flex items horizontally */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center-align items on the main axis */
 }
 
+/* Media query for screens wider than 901px */
 @media screen and (min-width: 901px) {
+  /* Modify 'header' styles for wider screens */
   header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: row; /* Arrange flex items horizontally */
+    justify-content: space-between; /* Distribute space between items */
   }
 
+  /* Modify 'nav_links' styles for wider screens */
   .nav_links {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Arrange flex items horizontally */
   }
 
+  /* Modify 'card' styles for wider screens */
   .card {
-    flex-basis: 275px;
+    flex-basis: 275px; /* Set a smaller size of the card in a flex container */
   }
 
+  /* Make the first 'header' in 'body' sticky at the top of the viewport */
   body > header:first-of-type {
     position: sticky;
     top: 0;
   }
 }
 
+/* Media query for users who have set their system to use reduced motion */
 @media screen and (prefers-reduced-motion: reduce) {
+  /* Disable animation for the logo if the user prefers reduced motion */
   #logo {
     animation: none;
   }
 }
 
+/* Media query for print and portrait orientation */
 @media print and (orientation: portrait) {
+  /* Override body styles for print */
   body {
-    font-family: Arial, Helvetica;
-    background-image: none;
+    font-family: Arial, Helvetica; /* Change the font family for printing */
+    background-image: none; /* Remove background images for printing */
   }
 
+  /* Adjust 'nav' width to be full for print */
   nav {
     width: 100%;
   }
 
+  /* Modify 'nav_links' styles for print */
   .nav_links {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: row; /* Arrange flex items horizontally */
+    justify-content: space-around; /* Distribute space around items evenly */
   }
 
+  /* Modify 'pricing' styles for print */
   .pricing {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-end;
+    flex-direction: row; /* Arrange flex items horizontally */
+    flex-wrap: nowrap; /* Do not wrap items to the next line */
+    align-items: flex-end; /* Align items at the end of the cross axis */
   }
 
+  /* Modify 'card' border and size for print */
   .card {
-    border: solid 2px #45addd;
-    flex-basis: 325px;
+    border: solid 2px #45addd; /* Apply a solid border with a specified color */
+    flex-basis: 325px; /* Adjust the size of the card for print */
   }
 
+  /* Hide the 'gallery' and its images for print */
   #gallery,
   .gallery {
     display: none;
   }
 
+  /* Add a thumbs-up emoji after the second list item in a 'card' */
   .card > ul li:nth-child(2)::after {
     content: "👍";
   }
 
+  /* Ensure that the footer always starts on a new page when printing */
   footer {
     page-break-before: always;
   }
